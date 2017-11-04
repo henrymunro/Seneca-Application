@@ -28,3 +28,7 @@ The question and the options could be dynamically supplied for the component to 
 }
 ```
 
+## To Run
+Clone the repo, install packages then run: 
+npm run webpack
+npm run server
