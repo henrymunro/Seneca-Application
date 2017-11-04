@@ -1,0 +1,13 @@
+.text {
+  width: 728px;
+  height: 18px;
+  /*font-family: Muli;*/
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 0.4px;
+  text-align: center;
+  color: #ffffff;
+
+  padding-top: 30px;
+  z-index: 1;
+}

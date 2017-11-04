@@ -1,0 +1,8 @@
+.slider_area {
+  position: absolute;
+  z-index: 1;
+  width: 307px;
+  height: 47px;
+  border-radius: 100px;
+  border: solid 1px #fbfbfb;
+}

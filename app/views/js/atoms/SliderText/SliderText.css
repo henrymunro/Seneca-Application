@@ -1,0 +1,41 @@
+.box_position { 
+  pointer-events: none;
+	position: absolute;
+	top: 1px;
+	z-index: 2;
+}
+
+
+.text_margin_left {
+	margin-top: 12px;
+  margin-left: 38px;
+}
+
+.text_margin_right {
+  margin-top: 12px;
+  margin-left: 195px;
+}
+
+.general_text {
+  width: 79px;
+  height: 18px;
+  /*font-family: Muli;*/
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 0.4px;
+  text-align: center;
+
+  transition: all 0.3s ease-in-out;
+}
+
+.correct {
+  color: #00b093;
+}
+
+.incorrect { 
+  color: #e66549;
+}
+
+.not_selected {
+  color: #ffffff;
+}

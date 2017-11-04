@@ -1,0 +1,13 @@
+.answer_text {
+  width: 728px;
+  height: 18px;
+  /*font-family: Muli;*/
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 0.4px;
+  text-align: center;
+  color: #ffffff;
+
+  padding-top: 290px;
+  z-index: 1;
+}
