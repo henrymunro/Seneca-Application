@@ -2,7 +2,9 @@
 
 This is an application built to supplement my application to Seneca Learning. It is built roughly following atomic principles with the components organised as atoms -> molecules -> organisms -> ecosystems (increasing complexity).
 
-The question and the options could be dynamically supplied for the component to render. Currently this configuration is statically set in app/views/js/organisms/QuestionArea/reducer, in the following format:  
+A live version can be viewed at: [http://henrymunro.com/HireMe/Seneca/](http://henrymunro.com/HireMe/Seneca/)
+
+The question and the options could be dynamically supplied for the component to render. Currently this configuration is statically set in [app/views/js/organisms/QuestionArea/reducer](https://github.com/henrymunro/Seneca-Application/blob/master/app/views/js/organisms/QuestionArea/reducer.js), in the following format:  
 
 ```javascript
 {
@@ -26,4 +28,3 @@ The question and the options could be dynamically supplied for the component to 
 }
 ```
 
-A live version can be viewed at: [http://henrymunro.com/HireMe/Seneca/](http://henrymunro.com/HireMe/Seneca/)
