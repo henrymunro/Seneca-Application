@@ -5,7 +5,7 @@
 }
 
 .slider {
-  width: 163px;
+  width: 52%;
   height: 47px;
   border-radius: 100px;
   background-color: rgba(249, 249, 249, 0.5);
@@ -16,7 +16,7 @@
 }
 
 .slider_right {
-  margin-left: 144px;
+  margin-left: 48%;
 }
 
 .hovered {

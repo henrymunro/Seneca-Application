@@ -1,7 +1,17 @@
+.sliders_div_wrapper {
+	padding-top: 50px;
+	display: flex;
+}
 
 .sliders_div {
-	position: absolute;
-	padding-top: 50px;
+	flex: 3;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.slider_border {
+	flex: 1;
 }
 
 .question_area_div {

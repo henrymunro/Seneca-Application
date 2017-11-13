@@ -18,17 +18,16 @@ class QuestionsAreaOrganism extends React.Component {
     // Assembles the sliders from the list of questions pulled from the store
     const Sliders = this.props.question.options.map((option, key) => {
       return (
-        <div key={key} style={{ position: "relative", top: `${key * 15}px` }}>
-          <Slider
-            {...option}
-            onSliderClick={() => this.props.onSliderClick(key)}
-            correct={this.props.allQuestionsCorrect}
-          />
-        </div>
+        <Slider
+          {...option}
+          onSliderClick={() => this.props.onSliderClick(key)}
+          correct={this.props.allQuestionsCorrect}
+          key={key}
+        />
       );
     });
 
-    return Sliders;
+    return <div className={styles.sliders_div}>{Sliders}</div>;
   }
 
   render() {
@@ -36,8 +35,10 @@ class QuestionsAreaOrganism extends React.Component {
       <div className={styles.question_area_div}>
         <QuestionAreaBox correct={this.props.allQuestionsCorrect}>
           <QuestionText text={this.props.question.question} />
-          <div className={styles.sliders_div}>
+          <div className={styles.sliders_div_wrapper}>
+            <div className={styles.slider_border} />
             {this.assembleSliders.bind(this)()}
+            <div className={styles.slider_border} />
           </div>
           <QuestionResponse correct={this.props.allQuestionsCorrect} />
         </QuestionAreaBox>
