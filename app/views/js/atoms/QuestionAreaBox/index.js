@@ -1,1 +1,1 @@
-export default from './QuestionAreaBox'
+export default from "./QuestionAreaBox";

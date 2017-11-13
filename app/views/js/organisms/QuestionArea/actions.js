@@ -1,7 +1,3 @@
-import { createActions } from 'redux-actions'
+import { createActions } from "redux-actions";
 
-
-export default createActions({},
-	'ON_SLIDER_CLICK',
-)
-
+export default createActions({}, "ON_SLIDER_CLICK");

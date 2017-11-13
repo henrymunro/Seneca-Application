@@ -1,14 +1,13 @@
-import React from 'react'
+import React from "react";
 
-
-import QuestionArea from '../organisms/QuestionArea'
+import QuestionArea from "../organisms/QuestionArea";
 
 export default class HomeEnvironment extends React.Component {
-
-  render () {
-
-    return <div>
-        <QuestionArea/>
-    </div>
+  render() {
+    return (
+      <div>
+        <QuestionArea />
+      </div>
+    );
   }
 }

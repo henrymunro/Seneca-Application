@@ -1,3 +1,3 @@
-export {default as reducer} from './reducer'
+export { default as reducer } from "./reducer";
 
-export default from './QuestionArea'
+export default from "./QuestionArea";

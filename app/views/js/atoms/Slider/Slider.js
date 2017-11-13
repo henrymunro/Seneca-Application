@@ -1,52 +1,50 @@
-import React from 'react'
+import React from "react";
 
-import styles from './Slider.css'
-
+import styles from "./Slider.css";
 
 export default class SliderAtom extends React.Component {
-
   // Opacity dip on hover of slider element
-  constructor (props) {
-	  super(props)
-	  this.state = {
-	    hovered: false
-	  }
+  constructor(props) {
+    super(props);
+    this.state = {
+      hovered: false
+    };
   }
 
-  onMouseEnter () {
-  	this.setState({hovered: true})
+  onMouseEnter() {
+    this.setState({ hovered: true });
   }
 
-  onMouseLeave () {
-  	this.setState({hovered: false})
+  onMouseLeave() {
+    this.setState({ hovered: false });
   }
 
   // Slider moves left or right on click
-  onClick () {
-  	this.props.onClick()
+  onClick() {
+    this.props.onClick();
   }
 
-  render () {
+  render() {
+    // Add hover class if necessary
+    let divClass = `${styles.slider} ${this.state.hovered && styles.hovered}`;
 
-  	// Add hover class if necessary
-  	let divClass = `${styles.slider} ${this.state.hovered && styles.hovered}`
+    // Determine position of slider, slide on click
+    if (this.props.currentOption === 1) {
+      divClass = `${divClass} ${styles.slider_right_margin}`;
+    }
 
-  	// Determine position of slider, slide on click
-  	if (this.props.currentOption === 1) {
-  		divClass = `${divClass} ${styles.slider_right_margin}`
-  	}
-
-    return <div 
-    		className={divClass}
-    		onMouseEnter={this.onMouseEnter.bind(this)}
-    		onMouseLeave={this.onMouseLeave.bind(this)}
-    		onClick={this.onClick.bind(this)}/>
+    return (
+      <div
+        className={divClass}
+        onMouseEnter={this.onMouseEnter.bind(this)}
+        onMouseLeave={this.onMouseLeave.bind(this)}
+        onClick={this.onClick.bind(this)}
+      />
+    );
   }
 }
-
 
 SliderAtom.propTypes = {
   currentOption: React.PropTypes.number,
   onClick: React.PropTypes.func
-
-}
+};

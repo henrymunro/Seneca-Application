@@ -1,8 +1,7 @@
-import { combineReducers } from 'redux'
+import { combineReducers } from "redux";
 
+import { reducer as questionArea } from "../organisms/QuestionArea";
 
-import { reducer as questionArea } from '../organisms/QuestionArea'
-
-export default combineReducers({  
+export default combineReducers({
   questionArea
-})
+});

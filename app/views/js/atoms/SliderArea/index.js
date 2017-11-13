@@ -1,1 +1,1 @@
-export default from './SliderArea'
+export default from "./SliderArea";

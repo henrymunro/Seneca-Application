@@ -1,1 +1,1 @@
-export default from './SliderText'
+export default from "./SliderText";

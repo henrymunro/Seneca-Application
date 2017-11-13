@@ -1,1 +1,1 @@
-export default from './QuestionText'
+export default from "./QuestionText";
