@@ -12,8 +12,8 @@ export default class SliderTextAtom extends React.Component {
       [styles.general_text]: true,
 
       // Styling dependant on if option 1 or 2
-      [styles.text_margin_left]: !(this.props.option === 1),
-      [styles.text_margin_right]: this.props.option === 1,
+      [styles.text_left]: !(this.props.option === 1),
+      [styles.text_right]: this.props.option === 1,
 
       // Styling dependant of if answers are correcr
       [styles.correct]: this.props.correct,
@@ -23,11 +23,7 @@ export default class SliderTextAtom extends React.Component {
       [styles.not_selected]: !this.props.selected
     });
 
-    return (
-      <div className={styles.box_position}>
-        <div className={textClass}>{this.props.text}</div>
-      </div>
-    );
+    return <div className={textClass}>{this.props.text}</div>;
   }
 }
 

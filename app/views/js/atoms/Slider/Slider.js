@@ -27,20 +27,23 @@ export default class SliderAtom extends React.Component {
 
   render() {
     // Add hover class if necessary
-    let divClass = `${styles.slider} ${this.state.hovered && styles.hovered}`;
+    let slider_class = `${styles.slider} ${this.state.hovered &&
+      styles.hovered}`;
 
     // Determine position of slider, slide on click
     if (this.props.currentOption === 1) {
-      divClass = `${divClass} ${styles.slider_right_margin}`;
+      slider_class = `${slider_class} ${styles.slider_right}`;
     }
 
     return (
-      <div
-        className={divClass}
-        onMouseEnter={this.onMouseEnter.bind(this)}
-        onMouseLeave={this.onMouseLeave.bind(this)}
-        onClick={this.onClick.bind(this)}
-      />
+      <div className={styles.slider_wrapper}>
+        <div
+          className={slider_class}
+          onMouseEnter={this.onMouseEnter.bind(this)}
+          onMouseLeave={this.onMouseLeave.bind(this)}
+          onClick={this.onClick.bind(this)}
+        />
+      </div>
     );
   }
 }

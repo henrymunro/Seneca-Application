@@ -1,38 +1,28 @@
-.box_position { 
-  pointer-events: none;
-	position: absolute;
-	top: 1px;
-	z-index: 2;
-}
-
-
-.text_margin_left {
-	margin-top: 12px;
-  margin-left: 38px;
-}
-
-.text_margin_right {
-  margin-top: 12px;
-  margin-left: 195px;
-}
-
 .general_text {
-  width: 79px;
-  height: 18px;
-  /*font-family: Muli;*/
+  pointer-events: none;
   font-size: 14px;
   font-weight: bold;
   letter-spacing: 0.4px;
-  text-align: center;
-
   transition: all 0.3s ease-in-out;
+  justify-self: center;
+  align-self: center;
+  grid-row: 1/2;
+  z-index: 2;
+}
+
+.text_left {
+  grid-column: 1/2;
+}
+
+.text_right {
+  grid-column: 2/3;
 }
 
 .correct {
   color: #00b093;
 }
 
-.incorrect { 
+.incorrect {
   color: #e66549;
 }
 

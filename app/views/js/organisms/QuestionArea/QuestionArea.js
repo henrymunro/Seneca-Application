@@ -18,7 +18,7 @@ class QuestionsAreaOrganism extends React.Component {
     // Assembles the sliders from the list of questions pulled from the store
     const Sliders = this.props.question.options.map((option, key) => {
       return (
-        <div key={key} style={{ position: "relative", top: `${key * 60}px` }}>
+        <div key={key} style={{ position: "relative", top: `${key * 15}px` }}>
           <Slider
             {...option}
             onSliderClick={() => this.props.onSliderClick(key)}
