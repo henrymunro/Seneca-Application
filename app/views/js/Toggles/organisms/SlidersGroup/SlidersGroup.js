@@ -39,7 +39,6 @@ SlidersGroupOrganism.propTypes = {
     PropTypes.shape({
       option_0: PropTypes.string,
       option_1: PropTypes.string,
-      currentOption: PropTypes.number,
       correctOption: PropTypes.number
     })
   ),
