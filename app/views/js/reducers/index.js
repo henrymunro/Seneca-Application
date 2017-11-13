@@ -1,7 +1,7 @@
 import { combineReducers } from "redux";
 
-import { reducer as questionArea } from "../organisms/QuestionArea";
+import { reducer as toggles } from "../Toggles";
 
 export default combineReducers({
-  questionArea
+	toggles
 });

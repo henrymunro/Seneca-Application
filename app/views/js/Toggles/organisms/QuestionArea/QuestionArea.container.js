@@ -2,8 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
-import * as selectors from "./reducer";
-import actions from "./actions";
+import * as selectors from "../../reducer";
+import actions from "../../actions";
 
 import QuestionAreaBox from "../../atoms/QuestionAreaBox";
 import QuestionResponse from "../../atoms/QuestionResponse";

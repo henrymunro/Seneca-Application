@@ -1,36 +1,17 @@
 import { handleActions } from "redux-actions";
 import { combineReducers } from "redux";
 
-const question = {
-  question: "Ideal conditions for bacterial growth",
-  options: [
-    {
-      option_0: "Cold",
-      option_1: "Warm",
-      currentOption: 0,
-      correctOption: 1
-    },
-    {
-      option_0: "No water",
-      option_1: "Water",
-      currentOption: 0,
-      correctOption: 1
-    },
-    {
-      option_0: "No food",
-      option_1: "Food",
-      currentOption: 1,
-      correctOption: 1
-    }
-  ]
-};
-
 const initialState = {
-  question
+  question: {
+    question: "",
+    options: []
+  }
 };
 
 export default handleActions(
   {
+    ON_QUESTION_LOAD: (state, action) =>
+      Object.assign(state, { question: action.payload }),
     ON_SLIDER_CLICK: (state, action) => onSliderClick(state, action)
   },
   initialState
@@ -58,11 +39,12 @@ const onSliderClick = (state, action) => {
 };
 
 /*  #############       Selectors     ################   */
-export const getQuestion = state => state.questionArea.question;
+export const getQuestion = state => state.toggles.question;
 export const getAllQuestionsCorrect = state => {
   let correct = true;
+
   // Loop over all options and look for any incorrect answers
-  state.questionArea.question.options.map(option => {
+  state.toggles.question.options.map(option => {
     const { correctOption, currentOption } = option;
     if (correctOption != currentOption) {
       correct = false;
