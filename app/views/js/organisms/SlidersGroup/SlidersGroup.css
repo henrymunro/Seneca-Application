@@ -1,10 +1,10 @@
 .sliders_div_wrapper {
-	padding-top: 50px;
+	margin-top: 30px;
 	display: flex;
 }
 
 .sliders_div {
-	flex: 3;
+	flex: 8;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -12,4 +12,10 @@
 
 .slider_border {
 	flex: 1;
+}
+
+@media (min-width: 710px) {
+	.sliders_div {
+		flex: 3;
+	}
 }
