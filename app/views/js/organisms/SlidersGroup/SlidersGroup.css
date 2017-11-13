@@ -1,0 +1,15 @@
+.sliders_div_wrapper {
+	padding-top: 50px;
+	display: flex;
+}
+
+.sliders_div {
+	flex: 3;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.slider_border {
+	flex: 1;
+}

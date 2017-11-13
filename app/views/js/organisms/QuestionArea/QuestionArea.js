@@ -9,37 +9,21 @@ import QuestionAreaBox from "../../atoms/QuestionAreaBox";
 import QuestionResponse from "../../atoms/QuestionResponse";
 import QuestionText from "../../atoms/QuestionText";
 
-import Slider from "../../molecules/Slider";
+import SlidersGroup from "../SlidersGroup";
 
 import styles from "./QuestionArea.css";
 
 class QuestionsAreaOrganism extends React.Component {
-  assembleSliders() {
-    // Assembles the sliders from the list of questions pulled from the store
-    const Sliders = this.props.question.options.map((option, key) => {
-      return (
-        <Slider
-          {...option}
-          onSliderClick={() => this.props.onSliderClick(key)}
-          correct={this.props.allQuestionsCorrect}
-          key={key}
-        />
-      );
-    });
-
-    return <div className={styles.sliders_div}>{Sliders}</div>;
-  }
-
   render() {
     return (
       <div className={styles.question_area_div}>
         <QuestionAreaBox correct={this.props.allQuestionsCorrect}>
           <QuestionText text={this.props.question.question} />
-          <div className={styles.sliders_div_wrapper}>
-            <div className={styles.slider_border} />
-            {this.assembleSliders.bind(this)()}
-            <div className={styles.slider_border} />
-          </div>
+          <SlidersGroup
+            options={this.props.question.options}
+            onSliderClick={this.props.onSliderClick}
+            allQuestionsCorrect={this.props.allQuestionsCorrect}
+          />
           <QuestionResponse correct={this.props.allQuestionsCorrect} />
         </QuestionAreaBox>
       </div>
