@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import styles from "./QuestionAreaBox.css";
 
@@ -16,5 +17,5 @@ export default class QuestionsAreaBoxAtom extends React.Component {
 }
 
 QuestionsAreaBoxAtom.propTypes = {
-  correct: React.PropTypes.bool
+  correct: PropTypes.bool
 };

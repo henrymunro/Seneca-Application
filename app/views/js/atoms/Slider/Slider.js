@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import styles from "./Slider.css";
 
@@ -45,6 +46,6 @@ export default class SliderAtom extends React.Component {
 }
 
 SliderAtom.propTypes = {
-  currentOption: React.PropTypes.number,
-  onClick: React.PropTypes.func
+  currentOption: PropTypes.number,
+  onClick: PropTypes.func
 };

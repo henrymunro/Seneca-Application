@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import styles from "./Slider.css";
 
@@ -33,9 +34,9 @@ export default class SliderMolecule extends React.Component {
 }
 
 SliderMolecule.propTypes = {
-  option_0: React.PropTypes.string,
-  option_1: React.PropTypes.string,
-  currentOption: React.PropTypes.number,
-  correct: React.PropTypes.bool,
-  onSliderClick: React.PropTypes.func
+  option_0: PropTypes.string,
+  option_1: PropTypes.string,
+  currentOption: PropTypes.number,
+  correct: PropTypes.bool,
+  onSliderClick: PropTypes.func
 };

@@ -32,7 +32,6 @@ class QuestionsAreaOrganism extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     return (
       <div className={styles.question_area_div}>
         <QuestionAreaBox correct={this.props.allQuestionsCorrect}>

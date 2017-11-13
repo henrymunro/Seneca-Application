@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import cx from "classnames";
 
 import styles from "./SliderText.css";
@@ -31,8 +32,8 @@ export default class SliderTextAtom extends React.Component {
 }
 
 SliderTextAtom.propTypes = {
-  text: React.PropTypes.string,
-  option: React.PropTypes.number,
-  correct: React.PropTypes.bool,
-  selected: React.PropTypes.bool
+  text: PropTypes.string,
+  option: PropTypes.number,
+  correct: PropTypes.bool,
+  selected: PropTypes.bool
 };
