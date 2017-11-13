@@ -14,6 +14,7 @@ export default class SlidersGroupOrganism extends React.Component {
           {...option}
           onSliderClick={() => this.props.onSliderClick(key)}
           correct={this.props.allQuestionsCorrect}
+          currentOption={this.props.answers[key].currentOption}
           key={key}
         />
       );
@@ -40,6 +41,12 @@ SlidersGroupOrganism.propTypes = {
       option_1: PropTypes.string,
       currentOption: PropTypes.number,
       correctOption: PropTypes.number
+    })
+  ),
+  answers: PropTypes.arrayOf(
+    PropTypes.shape({
+      optionKey: PropTypes.number,
+      currentOption: PropTypes.number
     })
   ),
   onSliderClick: PropTypes.func,

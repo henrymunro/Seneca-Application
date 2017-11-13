@@ -16,19 +16,16 @@ export default class Home extends React.Component {
 				{
 					option_0: "Cold",
 					option_1: "Warm",
-					currentOption: 0,
 					correctOption: 1
 				},
 				{
 					option_0: "No water",
 					option_1: "Water",
-					currentOption: 0,
 					correctOption: 1
 				},
 				{
 					option_0: "No food",
 					option_1: "Food",
-					currentOption: 1,
 					correctOption: 1
 				}
 			]

@@ -21,6 +21,7 @@ class QuestionsAreaOrganism extends React.Component {
           <QuestionText text={this.props.question.question} />
           <SlidersGroup
             options={this.props.question.options}
+            answers={this.props.answers}
             onSliderClick={this.props.onSliderClick}
             allQuestionsCorrect={this.props.allQuestionsCorrect}
           />
@@ -38,17 +39,23 @@ QuestionsAreaOrganism.propTypes = {
       PropTypes.shape({
         option_0: PropTypes.string,
         option_1: PropTypes.string,
-        currentOption: PropTypes.number,
         correctOption: PropTypes.number
       })
     )
   }),
+  answers: PropTypes.arrayOf(
+    PropTypes.shape({
+      optionKey: PropTypes.number,
+      currentOption: PropTypes.number
+    })
+  ),
   allQuestionsCorrect: PropTypes.bool
 };
 
 @connect((store, ownProps) => {
   return {
     question: selectors.getQuestion(store),
+    answers: selectors.getAnswers(store),
     allQuestionsCorrect: selectors.getAllQuestionsCorrect(store)
   };
 }, Object.assign({}, actions))

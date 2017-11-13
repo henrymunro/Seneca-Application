@@ -1,21 +1,40 @@
 import { handleActions } from "redux-actions";
 import { combineReducers } from "redux";
 
+import { markQuestion, randomiseInitialAnswers } from "./methods";
+
 const initialState = {
   question: {
     question: "",
     options: []
+  },
+  answers: [],
+  marks: {
+    allAnswersCorrect: false,
+    markBreakDown: []
   }
 };
 
 export default handleActions(
   {
-    ON_QUESTION_LOAD: (state, action) =>
-      Object.assign(state, { question: action.payload }),
+    ON_QUESTION_LOAD: (state, action) => onQuestionLoad(state, action),
     ON_SLIDER_CLICK: (state, action) => onSliderClick(state, action)
   },
   initialState
 );
+
+/*  #############   Reducer Actions  ################   */
+
+// Initialised question object and answers array when passed from external source
+const onQuestionLoad = (state, action) => {
+  // Initialise the random answers and marking object
+  const initialAnswers = randomiseInitialAnswers(action.payload.options);
+  return Object.assign(state, {
+    question: action.payload,
+    answers: initialAnswers,
+    marks: markQuestion(action.payload.options, initialAnswers)
+  });
+};
 
 // Move slider on click
 const onSliderClick = (state, action) => {
@@ -23,7 +42,7 @@ const onSliderClick = (state, action) => {
   const key = action.payload;
 
   // Find question and toggle currentOption
-  const nextOptionsState = state.question.options.map((option, optKey) => {
+  const nextAnswersState = state.answers.map((option, optKey) => {
     if (optKey === key) {
       return Object.assign({}, option, {
         currentOption: option.currentOption === 1 ? 0 : 1
@@ -32,24 +51,16 @@ const onSliderClick = (state, action) => {
     return option;
   });
 
-  const nextQuestionState = Object.assign({}, state.question, {
-    options: nextOptionsState
+  // Mark new answers
+  const nextMarksState = markQuestion(state.question.options, nextAnswersState);
+  return Object.assign({}, state, {
+    answers: nextAnswersState,
+    marks: nextMarksState
   });
-  return Object.assign({}, state, { question: nextQuestionState });
 };
 
 /*  #############       Selectors     ################   */
 export const getQuestion = state => state.toggles.question;
-export const getAllQuestionsCorrect = state => {
-  let correct = true;
-
-  // Loop over all options and look for any incorrect answers
-  state.toggles.question.options.map(option => {
-    const { correctOption, currentOption } = option;
-    if (correctOption != currentOption) {
-      correct = false;
-    }
-  });
-
-  return correct;
-};
+export const getAnswers = state => state.toggles.answers;
+export const getAllQuestionsCorrect = state =>
+  state.toggles.marks.allAnswersCorrect;
